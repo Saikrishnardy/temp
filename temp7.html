@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      .header{
+        display:flex;
+        background-color: black;
+        justify-content: space-between;
+       
+        
+        
+      }
+
+      .menu ul{
+        display: flex;
+        
+        
+      }
+      .menu ul li a{
+        color: aliceblue;
+        text-decoration: none;
+        margin: 10px;
+        
+      
+      }
+      .menu ul li{
+        list-style: none;
+        padding: 14px 20px;
+        
+      }
       .row {
         height: 300px;
         background-color: silver;
@@ -29,14 +55,17 @@
       .box:hover {
         transform: scale(1.2, 1.2);
       }
+   
     </style>
   </head>
   <body>
     <h1>Temp 7</h1>
     <hr />
     <div class="container">
-        <div>
-            <h1>My Application</h1>
+        <div class="header">
+         
+            <h1 style="color: azure; padding:0px 20px;">My Application </h1>
+             <div class="menu">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Projects</a></li>
@@ -44,7 +73,9 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-        </div>
+            </div>
+          </div>
+        
 
     <div class="row">
       <div class="box">
