@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <style>
+        .conatainer{
+            display: flex;
+            justify-content: center;
+            
+        }
+        .box{
+            margin: 20px;
+            border: 2px solid gray;
+            padding: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
     <script>
-        let products=[
-            {id:1,names:"Product 1",price:35},
-            {id:2,names:"Product 2",price:96},
-            {id:3,names:"Product 3",price:58},
-        ];
+      let products = [
+        { id: 1, names: "Product 1", price: 35 ,url:"https://picsum.photos/id/237/200/300"},
+        { id: 2, names: "Product 2", price: 96,url:"https://picsum.photos/id/237/200/300" },
+        { id: 3, names: "Product 3", price: 58,url:"https://picsum.photos/id/237/200/300" },
+      ];
+      console.log(products[0]);
+      let len=products.length
+        let str="<div class='conatainer'>"
+      for(let i=0;i<len;i++){
+        str+=`<div class='box'>
+            <img src='${products[i].url}'>
+            <h2>${products[i].names}</h2>
+            <h3>price:${products[i].price}</h3>
+            <button>add to cart</button>
+            </div>`
+        }
+     
+      root.innerHTML=str
     </script>
-</body>
+  </body>
 </html>
