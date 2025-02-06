@@ -3,26 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form</title>
+    <style>
+        #container{
+          
+            justify-content: center;
+            align-items: center;
+        }
+        .b{
+            border-radius: 5px;
+            border-color:darkslategrey;
+        }
+    </style>
     <script>
-        function showdata(){
+        let users=[]
+        function loginform(){
+            root.innerHTML= `<h1>Login form</h1>
+    <p><input type="text" id="email" placeholder="Email address"></p>
+    
+    <p><input type="password" id="pass" placeholder="password"></p>
+    <button onclick="showdata()">Login</button>`
+   
+        }
+        function showform(){
+            root.innerHTML=`<h1>New User SignUp Form</h1>
+    <p><input type="text" id="name" class="b" placeholder="name"></p>
+    <p><input type="email" id="email" class="b" placeholder="email"></p>
+   <p><input type="password" id="pass" class="b"placeholder="password"></p>
+   <p><input type="date" id="dob"></p>
+   <button onclick="adduser()">Regeister</button>
+   <div id="data"></div>`;
+        }
+        function deleteuser(index){
+            delete users.splice(index,1);
+            showdata()
+        }
+        function adduser()
+        {
             let name=document.getElementById("name").value
             let email=document.getElementById("email").value
             let pass=document.getElementById("pass").value
             let dob=document.getElementById("dob").value
-            d1.innerHTML=`${name},${email},${pass},${dob}`;
+            let user={
+                name:name,
+                email:email,
+                pass:pass,
+                dob:dob
+            }
+            users.push(user)
+            showdata()
+            loginform()
         }
+        function showdata(){
+            let length=users.length
+            let str=""
+            for(let i=0;i<length;i++)
+            {
+                str+=`<div>
+                    ${users[i].name}-
+                    ${users[i].email}-
+                    ${users[i].pass}-
+                    ${users.dob}
+                    <button onclick='deleteuser(${i})'>Delete</button>
+                    </div>`
+            }
+            data.innerHTML=str;
+        }showform()
     </script>
 </head>
-<body>
-    <h1>Sign Up</h1>
-    <p><input type="text" id ="name"></p>
-    <p><input type="text" id ="email" placeholder=" enter email"></p>
-    <p><input type="password" id ="pass" placeholder="enter password"></p>
-    <p><input type="date" id ="dob"></p>
-    <button onclick="showdata()">Sign up</button>
-    <div id="d1"></div>
-    
-    
+<body onload="showform()">
+    <div id="root"></div>
+    <!-- <div id="container">
+    <h1>New User SignUp Form</h1>
+    <p><input type="text" id="name" class="b" placeholder="name"></p>
+    <p><input type="email" id="email" class="b" placeholder="email"></p>
+   <p><input type="password" id="pass" class="b"placeholder="password"></p>
+   <p><input type="date" id="dob"></p>
+   <button onclick="adduser()">Regeister</button>
+   <div id="data"></div>
+   </div> -->
 </body>
 </html>
