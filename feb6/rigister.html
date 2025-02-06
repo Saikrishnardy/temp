@@ -17,12 +17,23 @@
     </style>
     <script>
         let users=[]
+        function chkuser(){
+            let email=document.getElementById("email").value
+            let pass=document.getElementById("pass").value
+            if(email=="sai@gmail.com"&&pass==123)
+            {
+            document.write("welcome sai!!");
+        }
+            else{
+            document.write("access denied!!"); 
+            }
+        }
         function loginform(){
             root.innerHTML= `<h1>Login form</h1>
     <p><input type="text" id="email" placeholder="Email address"></p>
     
     <p><input type="password" id="pass" placeholder="password"></p>
-    <button onclick="showdata()">Login</button>`
+    <button onclick="chkuser()">Login</button><button onclick="showform()">create account</button>`
    
         }
         function showform(){
@@ -71,7 +82,7 @@
         }showform()
     </script>
 </head>
-<body onload="showform()">
+<body onload="loginform()">
     <div id="root"></div>
     <!-- <div id="container">
     <h1>New User SignUp Form</h1>
