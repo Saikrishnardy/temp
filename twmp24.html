@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            min-height: 100vh;
+
+
+        }
+
+        .create {
+            border: 2px solid black;
+            width: 25vw;
+            height: auto;
+            padding: 15px;
+            border-radius: 10px;
+            
+        }
+
+        .create-head {
+            text-align: center;
+
+        }
+
+        .name {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+
+
+
+        }
+
+        .name input {
+            padding: 5px;
+            border-radius: 4px;
+            border-color: rgb(48, 47, 47);
+        }
+
+        .dob {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+        }
+
+        .dob select {
+            width: 30vw;
+            border-radius: 2px;
+            height: 30px;
+        }
+
+        .gender {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+        }
+
+        .gender-box {
+            border: 1px solid rgb(66, 64, 64);
+            border-radius: 2px;
+            padding: 4px;
+            width: 100px;}
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="create">
+            <div class="create-head">
+                <h2>Create a new account</h2>
+                <p>quick and easy</p>
+            </div>
+            <hr>
+            <div class="name">
+                <div><input type="text" placeholder="First name" class="input"></div>
+                <div><input type="text" placeholder="Surname" class="input"></div>
+            </div>
+            <p>Date of birth</p>
+            <div class="dob">
+
+                <select id="day" name="day">
+                    <option value="1">1</option>
+                    <!-- Days 1 to 31 -->
+                    <script>
+                        for (let i = 2; i <= 31; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+
+
+                <select id="month" name="month">
+
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+
+                <select id="year" name="year">
+
+                    <script>
+                        let currentYear = new Date().getFullYear();
+                        for (let i = currentYear; i >= currentYear - 100; i--) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+            </div>
+            <h4>gender</h4>
+            <div class="gender">
+                <div class="gender-box"><label for="male">Male</label>
+                    <input type="radio" value="Male">
+                </div>
+                <div class="gender-box"> <label for="fenale"> Female</label>
+                    <input type="radio" value="Female">
+                </div>
+                <div class="gender-box"> <label for="coustom"> coustom</label>
+                    <input type="radio" value="coustom">
+                </div>
+            </div>
+            <div class="details">
+                <input type="text" placeholder="Mobile number or emial address">
+                <input type="password" placeholder="New password">
+            </div>
+            <div>
+                <p>People who use our service may have uploaded your contact information to Facebook. <a href="/">Learn
+                        more.</a></p>
+                <p>By clicking Sign Up, you agree to our <a href="">Terms</a>, <a href="">Privacy Policy</a> and <a
+                        href="">Cookies Policy</a>. You may receive
+                    SMS notifications from us and can opt out at any time.</p>
+            </div>
+
+
+            <div class="button-area"></div>
+            <div class="button"><button>Sign Up</button></div>
+            <div><a href="">Already have an account?</a></div>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>
